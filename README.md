@@ -51,3 +51,43 @@ If you're writing your first driver, use these exercises to get started. Each ex
 # Microsoft Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+这是微软官方的 Windows-driver-samples 仓库，是学习 Windows 驱动开发最权威的起点。
+一、仓库核心信息
+
+• 官方性：由微软官方维护，代码质量和兼容性有保障。
+
+• 用途：提供与 Visual Studio 和 Windows 驱动工具包 (WDK) 配合使用的驱动示例代码，覆盖从简单到复杂的各种驱动类型。
+
+• 适配性：支持通用 Windows 驱动和桌面专用驱动，可用于从手机到桌面 PC 的各种硬件平台。
+
+二、图中目录分类与用途
+
+从截图可见，该仓库按驱动类型进行了清晰的目录划分：
+
+• .github：GitHub 相关配置文件，如 CI/CD 工作流。
+
+• TrEE：与 TPM（可信平台模块）相关的驱动示例。
+
+• audio：音频设备驱动示例，如声卡驱动。
+
+• avstream：音视频流驱动示例，用于多媒体设备。
+
+• bluetooth：蓝牙设备驱动示例。
+
+• filesys：文件系统驱动示例，包括传统文件系统和过滤驱动。
+
+• general：通用驱动示例，包含你最关心的 Minifilter 驱动模板（如 passThrough、scanner 等），是学习文件系统过滤的最佳入口。
+
+• gnss：全球导航卫星系统驱动示例，如 GPS。
+
+• gpio/samples：通用输入输出引脚驱动示例。
+
+• hid：人体学输入设备驱动示例，如键盘、鼠标。
+
+三、针对你的学习建议
+
+1. Minifilter 入门：直接进入 general/minifilters 目录，这里有官方提供的最简模板，如 passThrough，可以直接编译运行，观察文件操作拦截效果。
+
+2. 编译环境：确保安装了匹配 Windows 版本的 Visual Studio 和 WDK，然后打开对应 .sln 工程文件进行编译。
+
+3. 调试与测试：使用 fltmc 命令加载编译好的 Minifilter 驱动，并通过 ProcMon 等工具验证其行为。
